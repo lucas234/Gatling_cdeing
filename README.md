@@ -1,2 +1,2 @@
-# Gatling_cdeing
+# Gatling_coding
 coding practice

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.blazemeter.gatling</groupId>
+	<artifactId>simple-gatling-tests-framework</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<dependencies>
+			<dependency>
+				<groupId>io.gatling.highcharts</groupId>
+				<artifactId>gatling-charts-highcharts</artifactId>
+				<version>2.3.1</version>
+				<scope>test</scope>
+			</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.gatling</groupId>
+				<artifactId>gatling-maven-plugin</artifactId>
+				<version>2.2.4</version>
+				<configuration>
+					<configFolder>${project.basedir}/src/test/resources</configFolder>
+					<dataFolder>${project.basedir}/src/test/resources/data</dataFolder>
+					<resultsFolder>${project.basedir}/target/gatling/results</resultsFolder>
+					<bodiesFolder>${project.basedir}/src/test/resources/bodies</bodiesFolder>
+					<simulationsFolder>${project.basedir}/src/test/scala</simulationsFolder>
+					<runDescription>This-is-the-run-description</runDescription>
+					<!--运行多个个用例-->
+					<runMultipleSimulations>true</runMultipleSimulations>
+					<!--需要运行的用例（类似于白名单）-->
+					<includes>
+						<param>basic.TestPostMethod</param>
+						<!--<param>basic.TestPostMethod</param>-->
+					</includes>
+					<!--不需要运行的用例（类似于黑名单）-->
+					<excludes>
+						<param>basic.FirstTry</param>
+						<param>basic.MyFirstGatlingTest</param>
+					</excludes>
+					<!--运行多个个用例-->
+
+					<!--运行单个用例-->
+					<!--<simulationClass>basic.TestPostMethod</simulationClass>-->
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+

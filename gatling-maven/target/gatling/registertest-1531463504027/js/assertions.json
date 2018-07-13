@@ -1,0 +1,10 @@
+{
+  "simulation": "complexSample.RegisterTest",
+  "simulationId": "registertest",
+  "start": 1531463504027,
+  "description": "",
+  "scenarios": ["register"],
+  "assertions": [
+
+  ]
+}
